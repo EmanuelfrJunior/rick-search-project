@@ -6,10 +6,8 @@ export function HeadComponents(){
             <div className="w-[33%]">
                 <img className="w-[40%] h-[70px]" src="src/assets/rick-and-morty.png" alt="RICK_AND_MORTY" />
             </div>
-            <div className=" w-[33%] pt-6 itens-center justify-content text-lg font-semibold">
-                <a href="">INICIO</a>
-                <a href="" className="m-10">HISTÓRIA</a>
-                <a href="">PERSONAGENS</a>
+            <div className=" w-[33%] pt-6 flex itens-center justify-center text-lg font-semibold">
+                <a href="">Rick Sanchez</a>
             </div>
             <div className="w-[33%] flex itens-center justify-end pt-4">
                 <a href="https://github.com/EmanuelfrJunior" target="blank"><img className="w-[90%] h-[40px]" src="src/assets/github.png" alt="" /></a>
