@@ -7,7 +7,7 @@ function App() {
   return (
     <>
     <div>
-      <div className='absolute top-0 left-0 w-full bg-white/80 backdrop-blur z-50'>
+      <div className='absolute top-0 left-0 w-full'>
         <HeadComponents/>
       </div>
       <div>
