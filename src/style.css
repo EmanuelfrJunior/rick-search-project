@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  background: #0b0f0c;
+  overflow-x: hidden;
+  font-family: Arial;
+}
+
+/* ==============================
+   SLIME RADIOATIVO DO TOPO
+   ============================== */
+#slime-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 220px; /* altura da gosma fixa */
+  background: radial-gradient(circle at 50% 10%, #39ff14, #0fa000);
+  filter: drop-shadow(0 0 25px #39ff14);
+  z-index: 9999;
+  pointer-events: none;
+
+  /* Máscara para criar borda ondulada orgânica */
+  mask: url("data:image/svg+xml;utf8,\
+  <svg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'>\
+  <path d='M0 0 H1000 V120 Q700 180 500 130 Q300 80 0 150 Z' fill='white' />\
+  </svg>") top / 100% 240px repeat-x;
+
+  animation: slimeGlow 3s infinite alternate ease-in-out;
+}
+
+/* Animação radioativa */
+@keyframes slimeGlow {
+  0% { filter: drop-shadow(0 0 15px #39ff14); }
+  100% { filter: drop-shadow(0 0 35px #00ff55); }
+}
+
+/* ==============================
+   GOTAS ESCORRENDO (aleatórias)
+   ============================== */
+#slime-top::before,
+#slime-top::after {
+  content: "";
+  position: absolute;
+  top: 150px;
+  width: 30px;
+  height: 260px;
+  background: linear-gradient(#39ff14, #0b5e0a);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 15px #39ff14);
+  animation: drop 4s infinite ease-in-out;
+}
+
+/* Gota 1 (esquerda) */
+#slime-top::before {
+  left: 20%;
+  animation-duration: 5s;
+}
+
+/* Gota 2 (direita) */
+#slime-top::after {
+  left: 70%;
+  width: 45px;
+  animation-duration: 6.5s;
+}
+
+/* Animação de descida das gotas */
+@keyframes drop {
+  0% {
+    transform: translateY(0) scaleX(1);
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(350px) scaleX(0.6);
+    opacity: 0;
+  }
+}
+
+/* ==============================
+   CONTEÚDO NORMAL
+   ============================== */
+.conteudo {
+  position: relative;
+  margin-top: 260px; /* espaço para a gosma */
+  padding: 40px;
+  background: #101a13;
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 25px #0b5e0a inset;
+}
